@@ -1,0 +1,13 @@
+﻿<h3>AudioPlayer</h3>
+
+
+@if (audioSrc is not null)
+ {
+     <audio controls><source src="@audioSrc" /></audio>
+ }
+<h5>Filename : @audioSrc</h5>
+@code {
+
+
+    public string audioSrc = "";
+}

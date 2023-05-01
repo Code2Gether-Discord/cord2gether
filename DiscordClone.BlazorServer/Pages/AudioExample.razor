@@ -1,0 +1,66 @@
+﻿@page "/audio-example"
+@using DiscordClone.Business.AudioProcessor
+@using System.ComponentModel.DataAnnotations
+@implements IDisposable
+
+<div>
+    <button disable="@HasError" @onclick="StartAudioStream">Record</button>
+    <button @onclick="StopAudioStream">Stop Recording</button>
+    @if (HasError)
+    {
+        <h5>@Error</h5>
+    }
+    <h5> File Source = @FileName</h5>
+    <form @onsubmit="() => HandleSetFileName(Name)">
+        <input @bind="Name" type="text" placeholder="Please enter a  file name..." />
+        <button> Set</button>
+    </form>
+</div>
+
+@code {
+    private string FileName;
+    private AudioProcessorExample localAudioStreamer;
+    private ElementReference audioPlayer;
+
+    [Required]
+    [StringLength(20, ErrorMessage = "File name is too long.")]
+    public string? Name { get; set; }
+
+    public string? Error { get; } = "There was an error setting the file name. Please Try again.";
+    public bool HasError { get; set; }
+
+    protected override void OnInitialized()
+    {
+        localAudioStreamer = new AudioProcessorExample(); // replace with your own IP address and port number
+    }
+
+
+    private void HandleSetFileName(string name)
+    {
+        if (name != null)
+        {
+            FileName = localAudioStreamer.SetFileName(name);
+            HasError = false;
+        }
+        else
+        {
+            HasError = true;
+        }
+
+    }
+    private void StartAudioStream()
+    {
+        localAudioStreamer.Start();
+    }
+
+    private void StopAudioStream()
+    {
+        localAudioStreamer.Stop();
+    }
+
+    public void Dispose()
+    {
+        localAudioStreamer?.Stop();
+        localAudioStreamer?.Dispose();
+    }
+}

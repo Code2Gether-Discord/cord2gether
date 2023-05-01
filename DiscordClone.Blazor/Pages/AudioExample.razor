@@ -1,0 +1,42 @@
+﻿@page "/audio-example"
+@using DiscordClone.Business.AudioProcessor
+@implements IDisposable
+
+<div>
+    <button @onclick="StartAudioStream">Start Audio Stream</button>
+    <button @onclick="StopAudioStream">Stop Audio Stream</button>
+
+    @if (audioSrc is not null)
+    {
+        <audio controls><source src="@audioSrc" /></audio>
+    }
+    <h5>Filename : @audioSrc</h5>
+
+</div>
+
+@code {
+    private AudioProcessorExample localAudioStreamer;
+    private ElementReference audioPlayer;
+    private string? audioSrc;
+
+    protected override void OnInitialized()
+    {
+        localAudioStreamer = new AudioProcessorExample(); // replace with your own IP address and port number
+    }
+
+    private void StartAudioStream()
+    {
+        localAudioStreamer.Start();
+    }
+
+    private void StopAudioStream()
+    {
+        localAudioStreamer.Stop();
+        audioSrc = localAudioStreamer.fileLocation;
+    }
+
+    public void Dispose()
+    {
+        localAudioStreamer?.Dispose();
+    }
+}
