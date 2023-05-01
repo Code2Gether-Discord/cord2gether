@@ -1,4 +1,3 @@
-using DiscordClone.BlazorServer.Data;
 using DiscordClone.Business.AudioProcessor;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
@@ -15,7 +14,6 @@ namespace DiscordClone.BlazorServer
             // Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
-            builder.Services.AddSingleton<WeatherForecastService>();
 
             var app = builder.Build();
 
