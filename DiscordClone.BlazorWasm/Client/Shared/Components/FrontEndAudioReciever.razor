@@ -1,0 +1,29 @@
+﻿@using System.Text
+@inject IJSRuntime jsRuntime
+<h3>FrontEndAudioReciever</h3>
+
+<div>
+    <button id="start-button" @onclick="StartAudio">Start Capture</button>
+    <button id="stop-button" @onclick="StopAudio">Stop Capture</button>
+</div>
+
+@code {
+
+    [JSInvokable]
+    public static Task LogAudioData()
+    {
+        Console.WriteLine("I was called in C#");
+//        Console.WriteLine("This is the Data stream received from the microphone: ", Encoding.Default.GetString(dataStream));
+        return Task.CompletedTask;
+    }
+
+    protected async Task StartAudio(MouseEventArgs args)
+    {
+        await jsRuntime.InvokeVoidAsync("startAudio", DotNetObjectReference.Create(this));
+    }
+
+    protected async Task StopAudio(MouseEventArgs args)
+    {
+        await jsRuntime.InvokeVoidAsync("stopAudio");
+    }
+}

@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordClone.Tests", "DiscordClone.Tests\DiscordClone.Tests.csproj", "{221D83DF-D24D-41C6-B9AC-05900669A781}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordClone.Tests", "DiscordClone.Tests\DiscordClone.Tests.csproj", "{221D83DF-D24D-41C6-B9AC-05900669A781}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordClone.Entities", "DiscordClone.Entities\DiscordClone.Entities.csproj", "{9FA20C41-B56B-437A-ADE6-7D07F95B2341}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordClone.Entities", "DiscordClone.Entities\DiscordClone.Entities.csproj", "{9FA20C41-B56B-437A-ADE6-7D07F95B2341}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordClone.DAL", "DiscordClone.DAL\DiscordClone.DAL.csproj", "{9C51CC57-4505-46D1-B2F8-9C823E2AF53E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordClone.DAL", "DiscordClone.DAL\DiscordClone.DAL.csproj", "{9C51CC57-4505-46D1-B2F8-9C823E2AF53E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordClone.Business", "DiscordClone.Business\DiscordClone.Business.csproj", "{A7E42248-34F9-4CAA-913B-24B60EC3ABBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordClone.Business", "DiscordClone.Business\DiscordClone.Business.csproj", "{A7E42248-34F9-4CAA-913B-24B60EC3ABBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordClone.BlazorServer", "DiscordClone.BlazorServer\DiscordClone.BlazorServer.csproj", "{3B64959D-BB51-4855-8C8A-C1D8E6C66624}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordClone.BlazorServer", "DiscordClone.BlazorServer\DiscordClone.BlazorServer.csproj", "{3B64959D-BB51-4855-8C8A-C1D8E6C66624}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordClone.BlazorWasm.Server", "DiscordClone.BlazorWasm\Server\DiscordClone.BlazorWasm.Server.csproj", "{83B49F5B-B19C-4FD3-8F48-E71DF40A21CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordClone.BlazorWasm.Client", "DiscordClone.BlazorWasm\Client\DiscordClone.BlazorWasm.Client.csproj", "{22A8B32C-06DC-4979-BB09-EE44D61EEA15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordClone.BlazorWasm.Shared", "DiscordClone.BlazorWasm\Shared\DiscordClone.BlazorWasm.Shared.csproj", "{2627DEBE-A0EF-431E-BE12-270836CFBFBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{3B64959D-BB51-4855-8C8A-C1D8E6C66624}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B64959D-BB51-4855-8C8A-C1D8E6C66624}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B64959D-BB51-4855-8C8A-C1D8E6C66624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83B49F5B-B19C-4FD3-8F48-E71DF40A21CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83B49F5B-B19C-4FD3-8F48-E71DF40A21CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83B49F5B-B19C-4FD3-8F48-E71DF40A21CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83B49F5B-B19C-4FD3-8F48-E71DF40A21CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A8B32C-06DC-4979-BB09-EE44D61EEA15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A8B32C-06DC-4979-BB09-EE44D61EEA15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A8B32C-06DC-4979-BB09-EE44D61EEA15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A8B32C-06DC-4979-BB09-EE44D61EEA15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2627DEBE-A0EF-431E-BE12-270836CFBFBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2627DEBE-A0EF-431E-BE12-270836CFBFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2627DEBE-A0EF-431E-BE12-270836CFBFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2627DEBE-A0EF-431E-BE12-270836CFBFBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

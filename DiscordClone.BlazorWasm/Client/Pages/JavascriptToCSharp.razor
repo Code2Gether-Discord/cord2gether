@@ -1,0 +1,22 @@
+﻿@using System.Net
+@using System.Text
+<h3>JavascriptToCSharp</h3>
+
+<h3>Get a random int</h3>
+
+<div>The random number is: <span id="randomNumberSpan"></span></div>
+
+<button class="btn btn-info" onclick="giveMeRandomInt()">Click Me</button>
+
+
+
+@code {
+    [JSInvokable]
+    public static Task<int> GenerateRandomInt()
+    {
+        return Task.FromResult(new Random().Next());
+    }
+
+
+    
+}
